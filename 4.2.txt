@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(0, "");
+    int num1;
+    char num2;
+    int num3;
+    int i = 1;
+
+    cout << "[1]Работа с фигурами" << endl;
+    cout << "[2]Работа с квадратом" << endl;
+    cout << "" << endl;
+    cout << "Введите нужное вам задание:";
+    cin >> num1;
+    system("cls");
+
+    switch (num1)
+    {
+    case 1:
+
+
+
+        cout << "Введите символ : ";
+        cin >> num2;
+        cout << "Введите количество символов : ";
+        cin >> num1;
+        cout << "\nДля того, чтоб построить горизонтальную линию из символов нажмите 1 \nДля того, чтоб построить вертикальную линию из символов нажмите 2\n\nВыберите вариант : ";
+        cin >> num3;
+        while (i <= num1)
+        {
+            switch (num3)
+            {
+            case 1:
+                cout << num2;
+                i++;
+                break;
+            case 2:
+                cout << num2 << "\n";
+                i++;
+                break;
+            }
+        }
+        cout << "\n\n\n";
+        break;
+
+
+    }
+  
+    return 0;
+}
