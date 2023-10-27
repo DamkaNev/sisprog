@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+	setlocale(0, "");
+
+	int ter;
+	int baf = 0;
+	char sum;
+	int job;
+
+	cout << "Введите количество символов: ";
+	cin >> ter;
+	system("cls");
+	cout << "Введите символ: ";
+	cin >> sum;
+	system("cls");
+	cout << "Выбирите диагональ: " << endl << "[1]Горизантально: " << endl << "[2]Вертикально " << endl;
+	cin >> job;
+	system("cls");
+	while (baf < ter)
+	{
+		switch (job)
+		{
+		case 1:
+			cout << sum;
+			baf++;
+			break;
+		case 2:
+			cout << sum << endl;
+			baf++;
+			break;
+		default:
+			cout << "Ошибка";
+			break;
+		}
+	}
+	cout << endl;
+
+
+
+
+
+}
