@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int sumnum(int num) {
+    int sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
+}
+
+int getnum(int num) {
+    while (num >= 10) {
+        num = sumnum(num);
+    }
+    return num;
+}
+
+int main() {
+    setlocale(0, "");
+    int n;
+    cout << "Введите число n: ";
+    cin >> n;
+
+    int result = getnum(n);
+    cout << "Итоговое однозначное число: " << result << endl;
+
+    return 0;
+}
