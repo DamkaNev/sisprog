@@ -1,52 +1,139 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
     setlocale(0, "");
-    int num1;
-    char num2;
-    int num3;
-    int i = 1;
+    while (true) {
+        cout << "1. Ð›Ð¸Ð½Ð¸Ñ" << endl;
+        cout << "2. ÐšÐ²Ð°Ð´Ñ€Ð°Ñ‚" << endl;
+        cout << "3. ÐŸÑ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº" << endl;
+        cout << "4. Ð¢Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº" << endl;
+        cout << "0. Ð’Ñ‹Ñ…Ð¾Ð´" << endl;
+        cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ñ„Ð¸Ð³ÑƒÑ€Ñƒ: ";
 
-    cout << "[1]Ðàáîòà ñ ôèãóðàìè" << endl;
-    cout << "[2]Ðàáîòà ñ êâàäðàòîì" << endl;
-    cout << "" << endl;
-    cout << "Ââåäèòå íóæíîå âàì çàäàíèå:";
-    cin >> num1;
-    system("cls");
+        int choice;
+        cin >> choice;
+        cout << endl;
 
-    switch (num1)
-    {
-    case 1:
-
-
-
-        cout << "Ââåäèòå ñèìâîë : ";
-        cin >> num2;
-        cout << "Ââåäèòå êîëè÷åñòâî ñèìâîëîâ : ";
-        cin >> num1;
-        cout << "\nÄëÿ òîãî, ÷òîá ïîñòðîèòü ãîðèçîíòàëüíóþ ëèíèþ èç ñèìâîëîâ íàæìèòå 1 \nÄëÿ òîãî, ÷òîá ïîñòðîèòü âåðòèêàëüíóþ ëèíèþ èç ñèìâîëîâ íàæìèòå 2\n\nÂûáåðèòå âàðèàíò : ";
-        cin >> num3;
-        while (i <= num1)
-        {
-            switch (num3)
-            {
-            case 1:
-                cout << num2;
-                i++;
-                break;
-            case 2:
-                cout << num2 << "\n";
-                i++;
-                break;
-            }
+        if (choice == 0) {
+            cout << "Ð’Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹..." << endl;
+            break;
         }
-        cout << "\n\n\n";
-        break;
+        else if (choice < 1 || choice > 4) {
+            cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ð¹ Ð²Ñ‹Ð±Ð¾Ñ€." << endl << endl;
+            continue;
+        }
 
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð»: ";
+        char symbol;
+        cin >> symbol;
 
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 1, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ñ„Ð¸Ð³ÑƒÑ€Ð° Ð±Ñ‹Ð»Ð° Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð½Ð¾Ð¹, Ð¸Ð»Ð¸ 0, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð½Ðµ Ð±Ñ‹Ð»Ð°: ";
+        bool filled;
+        cin >> filled;
+        cout << endl;
+
+        if (choice == 1) {
+            int length;
+            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð»Ð¸Ð½Ñƒ Ð»Ð¸Ð½Ð¸Ð¸: ";
+            cin >> length;
+
+            for (int i = 0; i < length; i++) {
+                cout << symbol << " ";
+            }
+
+            cout << endl << endl;
+        }
+        else if (choice == 2) {
+            int sideLength;
+            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð»Ð¸Ð½Ñƒ ÑÑ‚Ð¾Ñ€Ð¾Ð½Ñ‹ ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð°: ";
+            cin >> sideLength;
+
+            if (filled) {
+                for (int i = 0; i < sideLength; i++) {
+                    for (int j = 0; j < sideLength; j++) {
+                        cout << symbol << " ";
+                    }
+                    cout << endl;
+                }
+            }
+            else {
+                for (int i = 0; i < sideLength; i++) {
+                    for (int j = 0; j < sideLength; j++) {
+                        if (j == 0 || i == 0 || i == sideLength - 1 || j == sideLength - 1) {
+                            cout << symbol << " ";
+                        }
+                        else {
+                            cout << "  ";
+                        }
+                    }
+                    cout << endl;
+                }
+            }
+
+            cout << endl;
+        }
+        else if (choice == 3) {
+            int width, height;
+            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑˆÐ¸Ñ€Ð¸Ð½Ñƒ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: ";
+            cin >> width;
+            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ‹ÑÐ¾Ñ‚Ñƒ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: ";
+            cin >> height;
+
+            if (filled) {
+                for (int i = 0; i < height; i++) {
+                    for (int j = 0; j < width; j++) {
+                        cout << symbol << " ";
+                    }
+                    cout << endl;
+                }
+            }
+            else {
+                for (int i = 0; i < height; i++) {
+                    for (int j = 0; j < width; j++) {
+                        if (j == 0 || i == 0 || i == height - 1 || j == width - 1) {
+                            cout << symbol << " ";
+                        }
+                        else {
+                            cout << "  ";
+                        }
+                    }
+                    cout << endl;
+                }
+            }
+
+            cout << endl;
+        }
+        else if (choice == 4) {
+            int height;
+            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ‹ÑÐ¾Ñ‚Ñƒ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: ";
+            cin >> height;
+
+            if (filled) {
+                for (int i = 0; i < height; i++) {
+                    for (int j = 0; j <= i; j++) {
+                        cout << symbol << " ";
+                    }
+                    cout << endl;
+                }
+            }
+            else {
+                for (int i = 0; i < height; i++) {
+                    for (int j = 0; j <= i; j++) {
+                        if (i == height - 1 || j == 0 || j == i) {
+                            cout << symbol << " ";
+                        }
+                        else {
+                            cout << "  ";
+                        }
+                    }
+                    cout << endl;
+                }
+            }
+
+            cout << endl;
+        }
     }
-  
+
     return 0;
 }
