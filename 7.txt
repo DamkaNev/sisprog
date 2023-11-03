@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+void fillArray(int* arr, int size) {
+  for (int i = 0; i < size; i++) {
+    arr[i] = rand() % 100; // заполняем элементы массива случайными числами от 0 до 99
+  }
+}
+
+void printArray(int* arr, int size) {
+  for (int i = 0; i < size; i++) {
+    cout << arr[i] << " ";
+  }
+  cout << std::endl;
+}
+
+int main() {
+  setlocale(0, "");
+  srand(time(0)); // инициализация генератора случайных чисел
+
+  const int size1 = 5;
+  int arr1[size1];
+  fillArray(arr1, size1);
+  cout << "Массив 1: ";
+  printArray(arr1, size1);
+
+  const int size2 = 10;
+  int arr2[size2];
+  fillArray(arr2, size2);
+  cout << "Массив 2: ";
+  printArray(arr2, size2);
+
+  return 0;
+}
