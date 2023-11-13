@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+bool nums(int num) {
+	int sqrtNum = sqrt(num);
+	return (sqrtNum * sqrtNum == num);
+}
+
+void number(int n) {
+	for (int i = 1; i <= n; i++) {
+		for (int j = 1; j <= i; j++) {
+			int sum = i * i + j * j;
+			if (nums(sum)) {
+				cout << i << "^2 + " << j << "^2 = " << sum << endl;
+			}
+		}
+	}
+}
+
+int main() {
+	setlocale(0, "");
+	int n;
+	cout << "Введите натуральное число n: ";
+	cin >> n;
+
+	cout << "Числа, которые можно представить в виде суммы квадратов двух натуральных чисел:" << endl;
+	number(n);
+
+	return 0;
+}
