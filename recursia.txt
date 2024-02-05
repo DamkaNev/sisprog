@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+
+int count(int mP, int mI, int mM, int m) {
+
+    if (m == 0) {
+        return 1;
+    }
+    if (m < 0) {
+        return 0;
+    }
+    int var = 0;
+    if (mP > 0) {
+        var += count(mP, mI, mM, m - mP);
+    }
+    if (mI > 0) {
+        var += count(mP, mI, mM, m - mI);
+    }
+    if (mM > 0) {
+        var += count(mP, mI, mM, m - mM);
+    }
+    return var;
+}
+
+int main()
+{
+    setlocale(0, "");
+    int mP, mI, mM, m;
+    cout << "Введите значения" << endl;
+    cout << "Введите вес пряника: ";
+    cin >> mP;
+    cout << "Введите вес ириски: ";
+    cin >> mI;
+    cout << "Введите вес мандаринки: ";
+    cin >> mM;
+    cout << "Введите общий вес: ";
+    cin >> m;
+    cout << "Количество комбинаций: " << count(mP, mI, mM, m) << endl;
+    return 0;
+
+    
+}
